@@ -1,13 +1,11 @@
 
 import React, { useEffect, useRef, useState } from 'react';
-import { Github } from 'lucide-react';
 
 interface Project {
   title: string;
   description: string;
   technologies: string[];
   achievements: string[];
-  github?: string;
   image: string;
 }
 
@@ -53,8 +51,7 @@ const ProjectsSection = () => {
         "Improved test accuracy by 30%",
         "Reduced regression testing time by 40%"
       ],
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=600&q=80",
-      github: "https://github.com/lokeshdarne"
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=600&q=80"
     },
     {
       title: "Healthcare E-Learning Platform",
@@ -65,8 +62,7 @@ const ProjectsSection = () => {
         "Implemented cross-platform testing solutions",
         "Created comprehensive test documentation"
       ],
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80",
-      github: "https://github.com/lokeshdarne"
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80"
     },
     {
       title: "Audio/Video Podcasts Platform",
@@ -77,15 +73,14 @@ const ProjectsSection = () => {
         "Developed comprehensive test plans",
         "Implemented smoke, integration, and regression tests"
       ],
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=600&q=80",
-      github: "https://github.com/lokeshdarne"
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=600&q=80"
     }
   ];
 
   return (
     <section id="projects" className="py-20 bg-gray-50">
       <div className="section-container" ref={sectionRef}>
-        <h2 className="section-title">Featured Projects</h2>
+        <h2 className="section-title">Featured Work Projects</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
@@ -132,18 +127,6 @@ const ProjectsSection = () => {
                     ))}
                   </ul>
                 </div>
-                
-                {project.github && (
-                  <a 
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-portfolio-purple hover:text-portfolio-purple/80 transition-colors"
-                  >
-                    <Github size={16} className="mr-1" />
-                    <span>View on GitHub</span>
-                  </a>
-                )}
               </div>
             </div>
           ))}
