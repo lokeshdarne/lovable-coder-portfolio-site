@@ -1,5 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const AboutSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -34,13 +35,10 @@ const AboutSection = () => {
         
         <div className="flex flex-col md:flex-row items-center justify-between gap-10">
           <div className="w-full md:w-1/3 flex justify-center">
-            <div className="rounded-full h-64 w-64 bg-gray-200 overflow-hidden shadow-lg border-4 border-white">
-              <img 
-                src="/placeholder.svg" 
-                alt="Lokesh Darne"
-                className="h-full w-full object-cover" 
-              />
-            </div>
+            <Avatar className="w-64 h-64 rounded-full shadow-lg border-4 border-white overflow-hidden">
+              <AvatarImage src="/lovable-uploads/7a608944-1d68-46e3-aec4-ae9f15702de9.png" alt="Lokesh Darne" className="h-full w-full object-cover" />
+              <AvatarFallback>LD</AvatarFallback>
+            </Avatar>
           </div>
           
           <div 

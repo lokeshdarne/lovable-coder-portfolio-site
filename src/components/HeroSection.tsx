@@ -3,7 +3,6 @@ import React from 'react';
 import { Link } from 'react-scroll';
 import { Github, Linkedin, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const HeroSection = () => {
   return (
@@ -13,11 +12,6 @@ const HeroSection = () => {
     >
       <div className="section-container">
         <div className="flex flex-col items-center text-center">
-          <Avatar className="w-36 h-36 mb-6 border-4 border-white shadow-lg animate-fade-in-up">
-            <AvatarImage src="/lovable-uploads/7a608944-1d68-46e3-aec4-ae9f15702de9.png" alt="Lokesh Darne" />
-            <AvatarFallback>LD</AvatarFallback>
-          </Avatar>
-          
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-fade-in-up font-heading">
             <span className="block">LOKESH DARNE</span>
           </h1>
