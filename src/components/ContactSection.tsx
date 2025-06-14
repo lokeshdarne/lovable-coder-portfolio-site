@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Mail, Phone, MapPin, Github, Linkedin, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -80,12 +79,22 @@ const ContactSection = () => {
       <div className="section-container relative z-10" ref={sectionRef}>
         <h2 className="section-title">Get In Touch</h2>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          <div className="contact-animate animate-on-scroll space-y-8">
-            <div className="glass-panel p-8">
+        {/* Updated hero text with different color for name */}
+        <div className="text-center mb-12">
+          <p className="text-xl text-gray-300 mb-4">
+            Ready to discuss your next project? Let's connect and bring your ideas to life.
+          </p>
+          <p className="text-lg text-gray-400">
+            Contact <span className="text-gradient font-bold">Lokesh Darne</span> directly
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+          <div className="contact-animate animate-on-scroll">
+            <div className="glass-panel p-8 h-full flex flex-col">
               <h3 className="text-2xl font-bold mb-8 gradient-text font-heading">Contact Information</h3>
               
-              <div className="space-y-8">
+              <div className="space-y-8 flex-1">
                 <div className="flex items-start group">
                   <div className="glass-card p-3 mr-6 group-hover:glow-effect transition-all duration-300">
                     <Mail className="text-purple-400" size={24} />
@@ -146,8 +155,8 @@ const ContactSection = () => {
                     </a>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg text-white mb-2 font-heading">Connect</h4>
-                    <p className="text-gray-300 text-lg">Let's connect on social media</p>
+                    <h4 className="font-semibold text-lg text-white mb-2 font-heading">Social</h4>
+                    <p className="text-gray-300 text-lg">Follow me on social media</p>
                   </div>
                 </div>
               </div>
@@ -155,10 +164,10 @@ const ContactSection = () => {
           </div>
           
           <div className="contact-animate animate-on-scroll">
-            <div className="glass-panel p-8">
+            <div className="glass-panel p-8 h-full flex flex-col">
               <h3 className="text-2xl font-bold mb-8 gradient-text font-heading">Send Me a Message</h3>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6 flex-1 flex flex-col">
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold text-white mb-3 font-heading">
                     Your Name
@@ -191,17 +200,17 @@ const ContactSection = () => {
                   />
                 </div>
                 
-                <div>
+                <div className="flex-1 flex flex-col">
                   <label htmlFor="message" className="block text-sm font-semibold text-white mb-3 font-heading">
                     Message
                   </label>
                   <textarea
                     id="message"
                     name="message"
-                    rows={5}
+                    rows={6}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 glass-card text-white placeholder-gray-400 border-0 focus:ring-2 focus:ring-purple-400 focus:outline-none transition-all duration-300 resize-none text-lg"
+                    className="w-full px-4 py-3 glass-card text-white placeholder-gray-400 border-0 focus:ring-2 focus:ring-purple-400 focus:outline-none transition-all duration-300 resize-none text-lg flex-1"
                     placeholder="Write your message here..."
                     required
                   ></textarea>
@@ -210,7 +219,7 @@ const ContactSection = () => {
                 <Button 
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-4 text-lg rounded-xl pulse-glow border-0 transition-all duration-300 hover:scale-105"
+                  className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-4 text-lg rounded-xl pulse-glow border-0 transition-all duration-300 hover:scale-105 mt-auto"
                 >
                   {isSubmitting ? (
                     <span className="flex items-center justify-center">
