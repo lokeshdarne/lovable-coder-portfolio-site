@@ -6,11 +6,15 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { toast } from '@/hooks/use-toast';
-import { LogOut, Save, Activity } from 'lucide-react';
+import { LogOut, Save, Activity, User, Code, Briefcase, GraduationCap, Mail, Award, FolderOpen } from 'lucide-react';
 import HeroEditor from './sections/HeroEditor';
 import AboutEditor from './sections/AboutEditor';
 import ContactEditor from './sections/ContactEditor';
 import SkillsEditor from './sections/SkillsEditor';
+import ExperienceEditor from './sections/ExperienceEditor';
+import EducationEditor from './sections/EducationEditor';
+import ProjectsEditor from './sections/ProjectsEditor';
+import PersonalProjectsEditor from './sections/PersonalProjectsEditor';
 import ActivityLog from './ActivityLog';
 
 interface PortfolioContent {
@@ -82,14 +86,14 @@ const AdminDashboard = () => {
       setPortfolioData(prev => ({ ...prev, [section]: content }));
       
       toast({
-        title: 'Success',
-        description: `${section} section updated successfully`,
+        title: 'Saved Successfully! ✨',
+        description: `${section.charAt(0).toUpperCase() + section.slice(1)} section has been updated`,
       });
     } catch (error) {
       console.error('Error saving data:', error);
       toast({
-        title: 'Error',
-        description: 'Failed to save changes',
+        title: 'Oops! Something went wrong',
+        description: 'Failed to save changes. Please try again.',
         variant: 'destructive',
       });
     } finally {
@@ -104,18 +108,30 @@ const AdminDashboard = () => {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
-        <div className="text-white text-xl">Loading admin dashboard...</div>
+        <div className="text-white text-xl">Loading your portfolio data...</div>
       </div>
     );
   }
+
+  const sections = [
+    { id: 'hero', label: 'Hero Section', icon: User, description: 'Your main introduction' },
+    { id: 'about', label: 'About Me', icon: User, description: 'Your story and background' },
+    { id: 'experience', label: 'Work Experience', icon: Briefcase, description: 'Your professional journey' },
+    { id: 'education', label: 'Education', icon: GraduationCap, description: 'Your academic background' },
+    { id: 'skills', label: 'Skills & Tech', icon: Code, description: 'Your technical expertise' },
+    { id: 'projects', label: 'Featured Projects', icon: Award, description: 'Your best work showcases' },
+    { id: 'personal_projects', label: 'Personal Projects', icon: FolderOpen, description: 'Your side projects' },
+    { id: 'contact', label: 'Contact Info', icon: Mail, description: 'How people can reach you' },
+    { id: 'activity', label: 'Activity Log', icon: Activity, description: 'Track your changes' }
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
       <div className="container mx-auto p-6">
         <div className="flex justify-between items-center mb-8">
           <div>
-            <h1 className="text-3xl font-bold gradient-text">Portfolio Admin</h1>
-            <p className="text-gray-400">Welcome back, {user?.email}</p>
+            <h1 className="text-3xl font-bold gradient-text">Portfolio Control Center</h1>
+            <p className="text-gray-400">Welcome back! Edit your portfolio content easily below.</p>
           </div>
           <Button
             onClick={handleSignOut}
@@ -128,30 +144,36 @@ const AdminDashboard = () => {
         </div>
 
         <Tabs defaultValue="hero" className="w-full">
-          <TabsList className="grid w-full grid-cols-5 bg-white/10 border-white/20">
-            <TabsTrigger value="hero" className="text-white data-[state=active]:bg-white/20">Hero</TabsTrigger>
-            <TabsTrigger value="about" className="text-white data-[state=active]:bg-white/20">About</TabsTrigger>
-            <TabsTrigger value="contact" className="text-white data-[state=active]:bg-white/20">Contact</TabsTrigger>
-            <TabsTrigger value="skills" className="text-white data-[state=active]:bg-white/20">Skills</TabsTrigger>
-            <TabsTrigger value="activity" className="text-white data-[state=active]:bg-white/20">
-              <Activity className="w-4 h-4 mr-2" />
-              Activity
-            </TabsTrigger>
+          <TabsList className="grid w-full grid-cols-3 lg:grid-cols-9 bg-white/10 border-white/20 mb-8">
+            {sections.map((section) => {
+              const Icon = section.icon;
+              return (
+                <TabsTrigger 
+                  key={section.id}
+                  value={section.id} 
+                  className="text-white data-[state=active]:bg-white/20 flex flex-col items-center p-3"
+                >
+                  <Icon className="w-4 h-4 mb-1" />
+                  <span className="text-xs hidden lg:block">{section.label}</span>
+                </TabsTrigger>
+              );
+            })}
           </TabsList>
 
           <TabsContent value="hero">
             <Card className="glass-card border-white/20">
               <CardHeader>
                 <CardTitle className="text-white flex items-center justify-between">
-                  Hero Section
-                  <Button
-                    disabled={saving}
-                    size="sm"
-                    className="bg-gradient-to-r from-purple-500 to-blue-500"
-                  >
-                    <Save className="w-4 h-4 mr-2" />
-                    {saving ? 'Saving...' : 'Auto-save'}
-                  </Button>
+                  <div className="flex items-center">
+                    <User className="w-5 h-5 mr-2" />
+                    Hero Section - Your Main Introduction
+                  </div>
+                  {saving && (
+                    <span className="text-sm text-purple-300 flex items-center">
+                      <Save className="w-4 h-4 mr-2" />
+                      Saving...
+                    </span>
+                  )}
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -166,7 +188,10 @@ const AdminDashboard = () => {
           <TabsContent value="about">
             <Card className="glass-card border-white/20">
               <CardHeader>
-                <CardTitle className="text-white">About Section</CardTitle>
+                <CardTitle className="text-white flex items-center">
+                  <User className="w-5 h-5 mr-2" />
+                  About Section - Tell Your Story
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <AboutEditor
@@ -177,15 +202,35 @@ const AdminDashboard = () => {
             </Card>
           </TabsContent>
 
-          <TabsContent value="contact">
+          <TabsContent value="experience">
             <Card className="glass-card border-white/20">
               <CardHeader>
-                <CardTitle className="text-white">Contact Information</CardTitle>
+                <CardTitle className="text-white flex items-center">
+                  <Briefcase className="w-5 h-5 mr-2" />
+                  Work Experience - Your Professional Journey
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <ContactEditor
-                  data={portfolioData.contact || {}}
-                  onSave={(content) => saveSection('contact', content)}
+                <ExperienceEditor
+                  data={portfolioData.experience || {}}
+                  onSave={(content) => saveSection('experience', content)}
+                />
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="education">
+            <Card className="glass-card border-white/20">
+              <CardHeader>
+                <CardTitle className="text-white flex items-center">
+                  <GraduationCap className="w-5 h-5 mr-2" />
+                  Education - Your Academic Background
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <EducationEditor
+                  data={portfolioData.education || {}}
+                  onSave={(content) => saveSection('education', content)}
                 />
               </CardContent>
             </Card>
@@ -194,7 +239,10 @@ const AdminDashboard = () => {
           <TabsContent value="skills">
             <Card className="glass-card border-white/20">
               <CardHeader>
-                <CardTitle className="text-white">Skills & Technologies</CardTitle>
+                <CardTitle className="text-white flex items-center">
+                  <Code className="w-5 h-5 mr-2" />
+                  Skills & Technologies - Your Expertise
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <SkillsEditor
@@ -205,10 +253,64 @@ const AdminDashboard = () => {
             </Card>
           </TabsContent>
 
+          <TabsContent value="projects">
+            <Card className="glass-card border-white/20">
+              <CardHeader>
+                <CardTitle className="text-white flex items-center">
+                  <Award className="w-5 h-5 mr-2" />
+                  Featured Projects - Your Best Work
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ProjectsEditor
+                  data={portfolioData.projects || {}}
+                  onSave={(content) => saveSection('projects', content)}
+                />
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="personal_projects">
+            <Card className="glass-card border-white/20">
+              <CardHeader>
+                <CardTitle className="text-white flex items-center">
+                  <FolderOpen className="w-5 h-5 mr-2" />
+                  Personal Projects - Your Side Projects
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <PersonalProjectsEditor
+                  data={portfolioData.personal_projects || {}}
+                  onSave={(content) => saveSection('personal_projects', content)}
+                />
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="contact">
+            <Card className="glass-card border-white/20">
+              <CardHeader>
+                <CardTitle className="text-white flex items-center">
+                  <Mail className="w-5 h-5 mr-2" />
+                  Contact Information - How People Reach You
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ContactEditor
+                  data={portfolioData.contact || {}}
+                  onSave={(content) => saveSection('contact', content)}
+                />
+              </CardContent>
+            </Card>
+          </TabsContent>
+
           <TabsContent value="activity">
             <Card className="glass-card border-white/20">
               <CardHeader>
-                <CardTitle className="text-white">Activity Log</CardTitle>
+                <CardTitle className="text-white flex items-center">
+                  <Activity className="w-5 h-5 mr-2" />
+                  Activity Log - Track Your Changes
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <ActivityLog />
