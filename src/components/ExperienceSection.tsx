@@ -77,20 +77,20 @@ const ExperienceSection = () => {
         <h2 className="section-title">My Journey</h2>
         
         <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-4 md:left-1/2 md:-translate-x-0.5 top-0 w-0.5 h-full bg-gradient-to-b from-purple-500 to-blue-500"></div>
+          {/* Timeline line with padding */}
+          <div className="absolute left-4 md:left-1/2 md:-translate-x-0.5 top-6 w-0.5 h-[calc(100%-48px)] bg-gradient-to-b from-purple-500 to-blue-500"></div>
           
           {experiences.map((exp, index) => (
             <div 
               key={index}
-              className={`timeline-item mb-12 animate-on-scroll ${
+              className={`timeline-item mb-16 animate-on-scroll ${
                 exp.align === 'left' 
-                  ? 'md:ml-auto md:pr-8 md:pl-0' 
-                  : 'md:mr-auto md:pl-8 md:pr-0'
+                  ? 'md:ml-auto md:pr-12 md:pl-0' 
+                  : 'md:mr-auto md:pl-12 md:pr-0'
               } pl-8 relative md:w-1/2`}
             >
-              {/* Timeline dot */}
-              <div className="absolute left-2 md:left-1/2 md:-translate-x-1/2 top-0 w-4 h-4 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full z-10 glow-effect"></div>
+              {/* Timeline dot with more spacing */}
+              <div className="absolute left-2 md:left-1/2 md:-translate-x-1/2 top-6 w-4 h-4 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full z-10 glow-effect"></div>
               
               <div className="glass-panel p-6 hover:glow-effect transition-all duration-300">
                 <div className="flex items-center mb-2">
