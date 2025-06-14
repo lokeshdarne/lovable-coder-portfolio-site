@@ -1,7 +1,9 @@
+
 import React from 'react';
 import { Link } from 'react-scroll';
 import { Github, Linkedin, ChevronDown, Code, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+
 const HeroSection = () => {
   return <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Animated background elements */}
@@ -50,12 +52,7 @@ const HeroSection = () => {
           </Button>
         </div>
       </div>
-      
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <Link to="about" smooth={true} duration={500} offset={-70} className="cursor-pointer glass-card p-3 hover:glow-effect transition-all duration-300">
-          <ChevronDown size={30} className="text-gray-400" />
-        </Link>
-      </div>
     </section>;
 };
+
 export default HeroSection;
