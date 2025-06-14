@@ -19,9 +19,7 @@ const HeroSection = () => {
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <div className="mb-6 flex items-center space-x-4 animate-fade-in-up">
             
-            <div className="p-3 glass-card glow-effect">
-              <Zap className="text-blue-400" size={24} />
-            </div>
+            
           </div>
           
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up font-heading">
