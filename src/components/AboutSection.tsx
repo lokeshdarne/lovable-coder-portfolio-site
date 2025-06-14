@@ -30,13 +30,17 @@ const AboutSection = () => {
   }, []);
   
   return (
-    <section id="about" className="py-20 relative">
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-blue-900/20 rounded-3xl mx-4"></div>
+    <section id="about" className="py-20 relative dark-glass-section">
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl floating-animation" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl floating-animation" style={{animationDelay: '3s'}} />
+      </div>
+      
       <div className="section-container relative z-10">
         <h2 className="section-title">About Me</h2>
         
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-          <div className="w-full lg:w-1/3 flex justify-center">
+          <div className="w-full lg:w-1/3 flex justify-center animate-on-scroll">
             <div className="relative">
               <Avatar className="w-72 h-72 rounded-3xl shadow-2xl border-4 border-white/20 overflow-hidden glow-effect">
                 <AvatarImage src="/lovable-uploads/7a608944-1d68-46e3-aec4-ae9f15702de9.png" alt="Lokesh Darne" className="h-full w-full object-cover" />
@@ -52,7 +56,7 @@ const AboutSection = () => {
             ref={sectionRef}
             className="w-full lg:w-2/3 animate-on-scroll"
           >
-            <div className="glass-card p-8 rounded-3xl">
+            <div className="glass-panel p-8">
               <div className="flex items-center mb-6">
                 <Heart className="text-red-400 mr-3" size={24} />
                 <h3 className="text-2xl font-bold gradient-text">Passionate Quality Engineer</h3>

@@ -78,15 +78,20 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gray-50">
-      <div className="section-container" ref={sectionRef}>
+    <section id="projects" className="py-20 dark-glass-section">
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl floating-animation" />
+        <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl floating-animation" style={{animationDelay: '3s'}} />
+      </div>
+      
+      <div className="section-container relative z-10" ref={sectionRef}>
         <h2 className="section-title">Featured Work Projects</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <div 
               key={index}
-              className="project-card animate-on-scroll rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 bg-white border border-gray-200"
+              className="project-card animate-on-scroll glass-panel overflow-hidden hover:glow-effect transition-all duration-300"
               onMouseEnter={() => setActiveProject(index)}
               onMouseLeave={() => setActiveProject(null)}
             >
@@ -99,16 +104,16 @@ const ProjectsSection = () => {
               </div>
               
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
+                <h3 className="text-xl font-bold mb-2 text-white">{project.title}</h3>
+                <p className="text-gray-300 mb-4">{project.description}</p>
                 
                 <div className="mb-4">
-                  <div className="text-sm font-semibold mb-2">Technologies:</div>
+                  <div className="text-sm font-semibold mb-2 text-purple-400">Technologies:</div>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, i) => (
                       <span 
                         key={i} 
-                        className="px-2 py-1 bg-portfolio-light-purple text-portfolio-purple rounded-md text-xs"
+                        className="px-2 py-1 glass-card text-white rounded-md text-xs border border-purple-500/30"
                       >
                         {tech}
                       </span>
@@ -117,11 +122,11 @@ const ProjectsSection = () => {
                 </div>
                 
                 <div className="mb-4">
-                  <div className="text-sm font-semibold mb-2">Achievements:</div>
+                  <div className="text-sm font-semibold mb-2 text-blue-400">Achievements:</div>
                   <ul className="space-y-1">
                     {project.achievements.map((achievement, i) => (
-                      <li key={i} className="flex text-sm">
-                        <span className="w-1.5 h-1.5 bg-portfolio-purple rounded-full mr-2 mt-1.5"></span>
+                      <li key={i} className="flex text-sm text-gray-300">
+                        <span className="w-1.5 h-1.5 bg-purple-400 rounded-full mr-2 mt-1.5"></span>
                         <span>{achievement}</span>
                       </li>
                     ))}

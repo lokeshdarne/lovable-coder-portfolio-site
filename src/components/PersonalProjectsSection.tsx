@@ -66,15 +66,20 @@ const PersonalProjectsSection = () => {
   ];
 
   return (
-    <section id="personal-projects" className="py-20 bg-white">
-      <div className="section-container" ref={sectionRef}>
+    <section id="personal-projects" className="py-20 dark-glass-section">
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-0 right-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl floating-animation" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl floating-animation" style={{animationDelay: '5s'}} />
+      </div>
+      
+      <div className="section-container relative z-10" ref={sectionRef}>
         <h2 className="section-title">Personal Projects</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {personalProjects.map((project, index) => (
             <div 
               key={index}
-              className="personal-project-card animate-on-scroll rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 bg-white border border-gray-200"
+              className="personal-project-card animate-on-scroll glass-panel overflow-hidden hover:glow-effect transition-all duration-300"
             >
               <div className="h-48 overflow-hidden">
                 <img 
@@ -85,16 +90,16 @@ const PersonalProjectsSection = () => {
               </div>
               
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
+                <h3 className="text-xl font-bold mb-2 text-white">{project.title}</h3>
+                <p className="text-gray-300 mb-4">{project.description}</p>
                 
                 <div className="mb-4">
-                  <div className="text-sm font-semibold mb-2">Technologies:</div>
+                  <div className="text-sm font-semibold mb-2 text-purple-400">Technologies:</div>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, i) => (
                       <span 
                         key={i} 
-                        className="px-2 py-1 bg-portfolio-light-purple text-portfolio-purple rounded-md text-xs"
+                        className="px-2 py-1 glass-card text-white rounded-md text-xs border border-blue-500/30"
                       >
                         {tech}
                       </span>
@@ -106,7 +111,7 @@ const PersonalProjectsSection = () => {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-portfolio-purple hover:text-portfolio-purple/80 transition-colors"
+                  className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors"
                 >
                   <Github size={16} className="mr-1" />
                   <span>View on GitHub</span>
