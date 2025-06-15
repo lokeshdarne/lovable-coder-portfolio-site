@@ -69,7 +69,7 @@ const NavBar = () => {
                 smooth={true}
                 duration={500}
                 offset={link.offset}
-                className="nav-link text-base xl:text-lg font-medium cursor-pointer"
+                className="nav-link group text-base xl:text-lg font-medium cursor-pointer"
               >
                 {link.name}
               </Link>
