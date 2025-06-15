@@ -31,7 +31,7 @@ const ExperienceSection = () => {
   }, []);
   const experiences: ExperienceItem[] = [{
     company: "Synechron",
-    title: "Full Stack QA @ HSBC",
+    title: "Full Stack QA at HSBC",
     duration: "10 Months",
     align: "right",
     description: ["Conducted comprehensive end-to-end testing for web and mobile applications", "Implemented API testing strategies to ensure robust backend functionality", "Collaborated with cross-functional teams to improve QA processes", "Led test planning and execution for new features"]
