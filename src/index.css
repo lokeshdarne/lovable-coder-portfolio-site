@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&family=Source+Code+Pro:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -49,36 +49,42 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
     min-height: 100vh;
+    line-height: 1.6;
   }
 }
 
 .section-container {
-  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20;
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24;
 }
 
 .section-title {
-  @apply text-3xl md:text-4xl font-bold mb-12 font-heading text-center;
+  @apply text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 lg:mb-16 text-center;
+  font-family: 'Playfair Display', serif;
   background: linear-gradient(135deg, #a855f7 0%, #3b82f6 50%, #06b6d4 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  line-height: 1.2;
 }
 
 .glass-card {
   @apply backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glass-panel {
-  @apply backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl;
+  @apply backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl p-6 sm:p-8;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glow-effect {
-  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3), 0 0 40px rgba(59, 130, 246, 0.2);
 }
 
 .animate-on-scroll {
@@ -141,8 +147,82 @@
 }
 
 .dark-glass-section {
-  @apply relative;
+  @apply relative py-16 sm:py-20 lg:py-24;
   background: linear-gradient(135deg, rgba(15, 15, 35, 0.9) 0%, rgba(26, 26, 46, 0.8) 50%, rgba(22, 33, 62, 0.9) 100%);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Typography improvements */
+.font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-mono {
+  font-family: 'Source Code Pro', monospace;
+}
+
+/* Responsive text sizes */
+.text-responsive-xl {
+  @apply text-lg sm:text-xl lg:text-2xl;
+}
+
+.text-responsive-lg {
+  @apply text-base sm:text-lg lg:text-xl;
+}
+
+.text-responsive-base {
+  @apply text-sm sm:text-base lg:text-lg;
+}
+
+/* Enhanced hover effects */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Better spacing utilities */
+.space-section {
+  @apply space-y-8 sm:space-y-12 lg:space-y-16;
+}
+
+.space-content {
+  @apply space-y-4 sm:space-y-6 lg:space-y-8;
+}
+
+/* Enhanced grid layouts */
+.grid-responsive {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10;
+}
+
+.grid-responsive-2 {
+  @apply grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12;
+}
+
+/* Button improvements */
+.btn-primary {
+  @apply bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300 hover:scale-105 pulse-glow;
+}
+
+/* Form improvements */
+.form-input {
+  @apply w-full px-4 py-3 glass-card text-white placeholder-gray-400 border-0 focus:ring-2 focus:ring-purple-400 focus:outline-none transition-all duration-300 rounded-lg;
+}
+
+/* Navigation improvements */
+.nav-link {
+  @apply text-gray-300 hover:text-white transition-colors duration-300 relative group;
+}
+
+.nav-link::after {
+  content: '';
+  @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 transition-all duration-300;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
 }

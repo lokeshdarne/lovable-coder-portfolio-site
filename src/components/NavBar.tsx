@@ -44,24 +44,24 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 top-0 glass-card glow-effect transition-transform duration-300 ${
+    <nav className={`fixed w-full z-50 top-0 glass-card transition-all duration-300 ${
       isVisible ? 'translate-y-0' : '-translate-y-full'
-    }`}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    } ${isScrolled ? 'glow-effect' : ''}`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           <div>
             <Link
               to="hero"
               smooth={true}
               duration={500}
-              className="gradient-text font-bold text-xl cursor-pointer hover:scale-105 transition-transform duration-300"
+              className="gradient-text font-bold text-xl sm:text-2xl cursor-pointer hover:scale-105 transition-transform duration-300 font-display"
             >
               Lokesh Darne
             </Link>
           </div>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden lg:flex space-x-8 xl:space-x-12">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -69,19 +69,19 @@ const NavBar = () => {
                 smooth={true}
                 duration={500}
                 offset={link.offset}
-                className="text-gray-300 hover:text-white transition-colors cursor-pointer relative group"
+                className="nav-link text-base xl:text-lg font-medium cursor-pointer"
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
           </div>
           
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button 
               onClick={toggleMenu}
-              className="text-gray-300 hover:text-white focus:outline-none transition-colors duration-300"
+              className="text-gray-300 hover:text-white focus:outline-none transition-colors duration-300 p-2"
+              aria-label="Toggle menu"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -90,8 +90,8 @@ const NavBar = () => {
         
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-6 glass-card rounded-xl mx-2 animate-fade-in">
-            <div className="flex flex-col space-y-4 p-4">
+          <div className="lg:hidden mt-4 pb-6 glass-card rounded-xl mx-2 animate-fade-in">
+            <div className="flex flex-col space-y-1 p-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
@@ -100,7 +100,7 @@ const NavBar = () => {
                   duration={500}
                   offset={link.offset}
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-gray-300 hover:text-white transition-colors cursor-pointer py-2"
+                  className="text-gray-300 hover:text-white transition-colors cursor-pointer py-3 px-4 rounded-lg hover:bg-white/10 font-medium"
                 >
                   {link.name}
                 </Link>
