@@ -54,9 +54,9 @@ const NavBar = () => {
               to="hero"
               smooth={true}
               duration={500}
-              className="gradient-text font-bold text-xl sm:text-2xl cursor-pointer hover:scale-105 transition-transform duration-300 font-display"
+              className="modern-heading gradient-text font-bold text-xl sm:text-2xl cursor-pointer hover:scale-105 transition-transform duration-300 tracking-tight"
             >
-              Lokesh Darne
+              LOKESH DARNE
             </Link>
           </div>
           
@@ -80,7 +80,7 @@ const NavBar = () => {
           <div className="lg:hidden">
             <button 
               onClick={toggleMenu}
-              className="text-gray-300 hover:text-white focus:outline-none transition-colors duration-300 p-2"
+              className="text-gray-400 hover:text-white focus:outline-none transition-colors duration-300 p-2"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -100,7 +100,7 @@ const NavBar = () => {
                   duration={500}
                   offset={link.offset}
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-gray-300 hover:text-white transition-colors cursor-pointer py-3 px-4 rounded-lg hover:bg-white/10 font-medium"
+                  className="text-gray-400 hover:text-white transition-colors cursor-pointer py-3 px-4 rounded-lg hover:bg-white/5 font-medium"
                 >
                   {link.name}
                 </Link>

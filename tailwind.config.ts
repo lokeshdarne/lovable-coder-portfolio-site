@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -64,17 +63,17 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				portfolio: {
-					'blue': '#5F9DF7',
-					'purple': '#9b87f5',
-					'light-purple': '#E5DEFF',
-					'soft-orange': '#FEC6A1',
-					'soft-yellow': '#FEF7CD',
+					'orange': '#f97316',
+					'amber': '#fb923c',
+					'light-orange': '#fdba74',
+					'dark': '#0a0a0a',
+					'darker': '#050505',
 				}
 			},
 			fontFamily: {
-				sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
-				heading: ['Poppins', 'sans-serif'],
-				display: ['Playfair Display', 'serif'],
+				sans: ['Outfit', 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+				heading: ['Outfit', 'sans-serif'],
+				display: ['Outfit', 'sans-serif'],
 				mono: ['Source Code Pro', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
 			},
 			fontSize: {
@@ -86,7 +85,7 @@ export default {
 				'2xl': ['1.5rem', { lineHeight: '2rem' }],
 				'3xl': ['1.875rem', { lineHeight: '2.25rem' }],
 				'4xl': ['2.25rem', { lineHeight: '2.5rem' }],
-				'5xl': ['3rem', { lineHeight: '1.2' }],
+				'5xl': ['3rem', { lineHeight: '1.1' }],
 				'6xl': ['3.75rem', { lineHeight: '1.1' }],
 				'7xl': ['4.5rem', { lineHeight: '1.1' }],
 			},
@@ -99,6 +98,10 @@ export default {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			letterSpacing: {
+				'tighter': '-0.05em',
+				'tight': '-0.025em',
 			},
 			keyframes: {
 				'accordion-down': {
