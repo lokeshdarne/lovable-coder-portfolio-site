@@ -62,7 +62,7 @@ const AboutSection = () => {
                 <h3 className="text-2xl font-bold gradient-text">Passionate Quality Engineer</h3>
               </div>
               
-              <p className="text-lg mb-6 text-gray-300 leading-relaxed">
+              <p className="text-lg mb-6 text-gray-200 leading-relaxed">
                 I am an experienced Software Development Engineer in Test (SDET) with expertise in web and mobile application testing, automation frameworks, and quality assurance across diverse domains.
               </p>
               
@@ -71,15 +71,15 @@ const AboutSection = () => {
                 <h4 className="text-xl font-semibold text-white">Technical Excellence</h4>
               </div>
               
-              <p className="text-lg mb-6 text-gray-300 leading-relaxed">
+              <p className="text-lg mb-6 text-gray-200 leading-relaxed">
                 With a strong foundation in Python, Java, and JavaScript, I specialize in creating robust automation frameworks that improve testing efficiency and product quality. My experience spans across healthcare, inventory management, and multimedia applications.
               </p>
               
-              <p className="text-lg mb-6 text-gray-300 leading-relaxed">
+              <p className="text-lg mb-6 text-gray-200 leading-relaxed">
                 I'm passionate about leveraging cutting-edge tools and technologies to enhance testing processes. My proficiency with tools like JIRA, TestRail, and various automation frameworks allows me to implement comprehensive testing strategies that ensure high-quality software delivery.
               </p>
               
-              <p className="text-lg text-gray-300 leading-relaxed">
+              <p className="text-lg text-gray-200 leading-relaxed">
                 I enjoy solving complex testing challenges and continuously improving my skills to adapt to evolving technologies and industry best practices.
               </p>
             </div>

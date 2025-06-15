@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -68,12 +69,25 @@ export default {
 					'light-orange': '#fdba74',
 					'dark': '#0a0a0a',
 					'darker': '#050505',
+				},
+				gray: {
+					50: '#f9fafb',
+					100: '#f3f4f6',
+					200: '#e5e7eb',
+					300: '#d1d5db',
+					400: '#9ca3af',
+					500: '#6b7280',
+					600: '#4b5563',
+					700: '#374151',
+					800: '#1f2937',
+					900: '#111827',
 				}
 			},
 			fontFamily: {
 				sans: ['Outfit', 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
 				heading: ['Outfit', 'sans-serif'],
 				display: ['Outfit', 'sans-serif'],
+				futuristic: ['Orbitron', 'Outfit', 'sans-serif'],
 				mono: ['Source Code Pro', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
 			},
 			fontSize: {
@@ -102,6 +116,9 @@ export default {
 			letterSpacing: {
 				'tighter': '-0.05em',
 				'tight': '-0.025em',
+				'wide': '0.025em',
+				'wider': '0.05em',
+				'widest': '0.1em',
 			},
 			keyframes: {
 				'accordion-down': {

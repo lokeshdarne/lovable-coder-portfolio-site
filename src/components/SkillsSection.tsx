@@ -125,7 +125,7 @@ const SkillsSection = () => {
               </div>
               <ul className="space-y-2 sm:space-y-3">
                 {category.skills.map((skill, skillIndex) => (
-                  <li key={skillIndex} className="flex items-center text-gray-300 text-sm sm:text-base">
+                  <li key={skillIndex} className="flex items-center text-gray-200 text-sm sm:text-base">
                     <span className="w-1.5 h-1.5 bg-purple-400 rounded-full mr-3 flex-shrink-0"></span>
                     <span className="leading-relaxed">{skill}</span>
                   </li>

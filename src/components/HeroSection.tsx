@@ -29,12 +29,12 @@ const HeroSection = () => {
             </div>
           </div>
           
-          <h1 className="modern-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 sm:mb-8 animate-fade-in-up leading-tight tracking-tight">
+          <h1 className="futuristic-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 sm:mb-8 animate-fade-in-up leading-tight tracking-widest">
             <span className="block text-white">LOKESH</span>
             <span className="block gradient-text">DARNE</span>
           </h1>
           
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium text-gray-400 mb-6 sm:mb-8 lg:mb-12 animate-fade-in-up animation-delay-100 font-heading leading-relaxed tracking-tight">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium text-gray-300 mb-6 sm:mb-8 lg:mb-12 animate-fade-in-up animation-delay-100 font-heading leading-relaxed tracking-tight">
             Software Development Engineer in Test
           </h2>
           
