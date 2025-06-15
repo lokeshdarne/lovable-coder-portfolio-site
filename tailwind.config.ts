@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -62,63 +61,17 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				},
-				portfolio: {
-					'orange': '#f97316',
-					'amber': '#fb923c',
-					'light-orange': '#fdba74',
-					'dark': '#0a0a0a',
-					'darker': '#050505',
-				},
-				gray: {
-					50: '#f9fafb',
-					100: '#f3f4f6',
-					200: '#e5e7eb',
-					300: '#d1d5db',
-					400: '#9ca3af',
-					500: '#6b7280',
-					600: '#4b5563',
-					700: '#374151',
-					800: '#1f2937',
-					900: '#111827',
 				}
 			},
 			fontFamily: {
 				sans: ['Outfit', 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
 				heading: ['Outfit', 'sans-serif'],
-				display: ['Outfit', 'sans-serif'],
-				futuristic: ['Orbitron', 'Outfit', 'sans-serif'],
 				mono: ['Source Code Pro', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
-			},
-			fontSize: {
-				'xs': ['0.75rem', { lineHeight: '1rem' }],
-				'sm': ['0.875rem', { lineHeight: '1.25rem' }],
-				'base': ['1rem', { lineHeight: '1.5rem' }],
-				'lg': ['1.125rem', { lineHeight: '1.75rem' }],
-				'xl': ['1.25rem', { lineHeight: '1.75rem' }],
-				'2xl': ['1.5rem', { lineHeight: '2rem' }],
-				'3xl': ['1.875rem', { lineHeight: '2.25rem' }],
-				'4xl': ['2.25rem', { lineHeight: '2.5rem' }],
-				'5xl': ['3rem', { lineHeight: '1.1' }],
-				'6xl': ['3.75rem', { lineHeight: '1.1' }],
-				'7xl': ['4.5rem', { lineHeight: '1.1' }],
-			},
-			spacing: {
-				'18': '4.5rem',
-				'88': '22rem',
-				'128': '32rem',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
-			},
-			letterSpacing: {
-				'tighter': '-0.05em',
-				'tight': '-0.025em',
-				'wide': '0.025em',
-				'wider': '0.05em',
-				'widest': '0.1em',
 			},
 			keyframes: {
 				'accordion-down': {
@@ -139,42 +92,6 @@ export default {
 						transform: 'translateY(0)'
 					},
 				},
-				'fade-in': {
-					'0%': {
-						opacity: '0'
-					},
-					'100%': {
-						opacity: '1'
-					},
-				},
-				'scale-in': {
-					'0%': {
-						opacity: '0',
-						transform: 'scale(0.9)'
-					},
-					'100%': {
-						opacity: '1',
-						transform: 'scale(1)'
-					},
-				},
-				'slide-in-right': {
-					'0%': {
-						transform: 'translateX(20px)',
-						opacity: '0'
-					},
-					'100%': {
-						transform: 'translateX(0)',
-						opacity: '1'
-					},
-				},
-				'pulse-slow': {
-					'0%, 100%': {
-						opacity: '1'
-					},
-					'50%': {
-						opacity: '0.8'
-					},
-				},
 				'bounce-gentle': {
 					'0%, 100%': {
 						transform: 'translateY(-5%)',
@@ -190,10 +107,6 @@ export default {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in-up': 'fade-in-up 0.6s ease-out',
-				'fade-in': 'fade-in 0.6s ease-out',
-				'scale-in': 'scale-in 0.6s ease-out',
-				'slide-in-right': 'slide-in-right 0.6s ease-out',
-				'pulse-slow': 'pulse-slow 3s infinite',
 				'bounce-gentle': 'bounce-gentle 2s infinite',
 			}
 		}

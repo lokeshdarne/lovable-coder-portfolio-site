@@ -7,16 +7,16 @@ const Footer = () => {
   
   return (
     <footer className="dark-glass-section border-t border-white/10">
-      <div className="section-container py-6">
-        <div className="flex flex-col items-center">
-          <h3 className="text-xl font-bold mb-4 gradient-text">Lokesh Darne</h3>
+      <div className="section-container py-8">
+        <div className="flex flex-col items-center space-y-4">
+          <h3 className="text-xl font-bold gradient-text">Lokesh Darne</h3>
           
-          <div className="text-gray-300 text-center mb-4 text-sm">
+          <div className="text-gray-300 text-center text-sm">
             <p>Software Development Engineer in Test (SDET)</p>
             <p className="text-gray-400">Automating quality, one test at a time</p>
           </div>
           
-          <div className="flex justify-center space-x-4 mb-4">
+          <div className="flex justify-center space-x-4">
             <a 
               href="https://linkedin.com/in/lokeshdarne" 
               target="_blank" 
