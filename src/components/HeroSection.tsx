@@ -1,32 +1,25 @@
-
 import React from 'react';
 import { Link } from 'react-scroll';
 import { Github, Linkedin, ChevronDown, Code, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
 const HeroSection = () => {
-  return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+  return <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl floating-animation" />
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl floating-animation" style={{
-          animationDelay: '2s'
-        }} />
+        animationDelay: '2s'
+      }} />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-orange-400/5 rounded-full blur-3xl floating-animation" style={{
-          animationDelay: '4s'
-        }} />
+        animationDelay: '4s'
+      }} />
       </div>
       
       <div className="section-container relative z-10">
         <div className="flex flex-col items-center text-center max-w-5xl mx-auto space-content">
           <div className="mb-8 flex items-center justify-center space-x-6 animate-fade-in-up">
-            <div className="glass-card p-4 hover:glow-effect transition-all duration-300">
-              <Code className="text-orange-400" size={32} />
-            </div>
-            <div className="glass-card p-4 hover:glow-effect transition-all duration-300">
-              <Zap className="text-amber-400" size={32} />
-            </div>
+            
+            
           </div>
           
           <h1 className="futuristic-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 sm:mb-8 animate-fade-in-up leading-tight tracking-widest">
@@ -43,22 +36,10 @@ const HeroSection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-8 mb-8 sm:mb-12 lg:mb-16 animate-fade-in-up animation-delay-300">
-            <a 
-              href="https://linkedin.com/in/lokeshdarne" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="glass-card p-4 sm:p-6 hover:glow-effect transition-all duration-300 hover:scale-110 hover-lift"
-              aria-label="LinkedIn Profile"
-            >
+            <a href="https://linkedin.com/in/lokeshdarne" target="_blank" rel="noopener noreferrer" className="glass-card p-4 sm:p-6 hover:glow-effect transition-all duration-300 hover:scale-110 hover-lift" aria-label="LinkedIn Profile">
               <Linkedin className="text-blue-400" size={32} />
             </a>
-            <a 
-              href="https://github.com/lokeshdarne" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="glass-card p-4 sm:p-6 hover:glow-effect transition-all duration-300 hover:scale-110 hover-lift"
-              aria-label="GitHub Profile"
-            >
+            <a href="https://github.com/lokeshdarne" target="_blank" rel="noopener noreferrer" className="glass-card p-4 sm:p-6 hover:glow-effect transition-all duration-300 hover:scale-110 hover-lift" aria-label="GitHub Profile">
               <Github className="text-orange-400" size={32} />
             </a>
           </div>
@@ -84,8 +65,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
